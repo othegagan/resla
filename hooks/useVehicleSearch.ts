@@ -33,7 +33,7 @@ const useVehicleSearch = () => {
         setSearchQuery('');
 
         try {
-            const hostid = localStorage.getItem('hostid');
+            const hostid = process.env.NEXT_PUBLIC_HOST_ID || '1473';
             const session = await getSession();
             const searchParams: any = getAllURLParameters();
 
