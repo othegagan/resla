@@ -81,8 +81,8 @@ const Footer = () => {
                             <p className='font-semibold text-gray-800 '>Contact Us</p>
                             <div className='mt-2 flex flex-col items-start space-y-2 font-light  md:font-normal'>
                                 <p>
-                                    <Link href='mailto:support@mybundee.com' target='_blank'>
-                                        support@mybundee.com
+                                    <Link href='mailto:support@Resla.com' target='_blank'>
+                                        support@Resla.com
                                     </Link>
                                 </p>
                             </div>
@@ -92,16 +92,14 @@ const Footer = () => {
 
                     <div className='hidden flex-col items-center justify-between sm:flex-row md:flex'>
                         <Logo />
-                        <p className='mt-4 text-sm text-gray-500 sm:mt-0 '>
-                            © Copyright {new Date().getFullYear()}. All Rights Reserved.
-                        </p>
+                        <p className='mt-4 text-sm text-gray-500 sm:mt-0 '>© Copyright {new Date().getFullYear()}. All Rights Reserved.</p>
                     </div>
 
                     {/* For Mobile */}
                     <div className='flex flex-row items-center justify-between  md:hidden'>
                         <Logo />
-                        <Link href='mailto:support@mybundee.com' target='_blank'>
-                            support@mybundee.com
+                        <Link href='mailto:support@Resla.com' target='_blank'>
+                            support@resla.com
                         </Link>
                     </div>
                     <p className='mt-4 text-center text-sm text-gray-500 sm:mt-0 md:hidden '>
@@ -145,10 +143,10 @@ const Footer = () => {
                     </div>
                     <hr className='my-4  border-zinc-700' />
                     <div className='space-y-5 text-center sm:flex sm:items-center sm:justify-between'>
-                        <Link className='text-sm text-zinc-800 no-underline' href='mailto: support@mybundee.com'>
-                            support@mybundee.com
+                        <Link className='text-sm text-zinc-800 no-underline' href='mailto: support@Resla.com'>
+                            support@resla.com
                         </Link>
-                        <p className='text-sm text-zinc-800'> © Copyright {new Date().getFullYear()}.  All Rights Reserved.</p>
+                        <p className='text-sm text-zinc-800'> © Copyright {new Date().getFullYear()}. All Rights Reserved.</p>
                     </div>
                 </div>
             </footer>

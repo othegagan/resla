@@ -25,14 +25,14 @@ const DeleteAccountComponent = () => {
                 toast({
                     duration: 4000,
                     variant: 'destructive',
-                    description: 'Failed to delete the account',
+                    description: 'Failed to delete the account'
                 });
             }
         } catch (error) {
             toast({
                 duration: 4000,
                 variant: 'destructive',
-                description: 'Failed to delete the account',
+                description: 'Failed to delete the account'
             });
             console.log('Failed to delete the account', error);
         } finally {
@@ -44,15 +44,17 @@ const DeleteAccountComponent = () => {
     return (
         <div>
             <p className='mt-6 max-w-2xl text-sm leading-snug text-neutral-500'>
-                We are sorry to see you go. Are you sure you want to delete your MyBundee account? Please be advised if you choose to proceed, your account
-                closure will be irreversible.
+                We are sorry to see you go. Are you sure you want to delete your Resla account? Please be advised if you choose to proceed,
+                your account closure will be irreversible.
             </p>
 
             <ul className='mt-4 list-inside list-disc'>
                 <li>You will no longer be able to book trips.</li>
                 <li>Any booked or pending trips will be cancelled immediately.</li>
                 <li>You will no longer be able to login to your account.</li>
-                <li>You are still financially responsible for any fees, claims, or reimbursements related to your past or pending trips.</li>
+                <li>
+                    You are still financially responsible for any fees, claims, or reimbursements related to your past or pending trips.
+                </li>
                 <li>Any information associated with your account will not be publically viewable on our website and apps.</li>
             </ul>
 

@@ -96,7 +96,7 @@ export default function LoginDialog() {
                     if (response.success) {
                         const payload: any = {
                             userData: response.data.userResponse,
-                            authToken: authTokenResponse.authToken,
+                            authToken: authTokenResponse.authToken
                         };
                         await createSession(payload);
                         closeModal();
@@ -109,7 +109,7 @@ export default function LoginDialog() {
                         firstname: result.user.displayName,
                         lastname: '',
                         email: result.user.email,
-                        mobilephone: result.user.phoneNumber,
+                        mobilephone: result.user.phoneNumber
                     };
 
                     const createUserResponse = await createNewUser(dataToCreateUser);
@@ -169,7 +169,7 @@ export default function LoginDialog() {
                     <div className='flex flex-col items-center gap-4'>
                         <Logo className='scale-[1.3]' />
 
-                        <span className='mb-4 ml-4 text-xl font-semibold text-neutral-700 '>Log In with MyBundee account</span>
+                        <span className='mb-4 ml-4 text-xl font-semibold text-neutral-700 '>Log In with Resla account</span>
                     </div>
                     <form
                         onSubmit={(event) => {
@@ -253,7 +253,12 @@ export default function LoginDialog() {
                             variant='outline'
                             className='flex w-full gap-4  py-5'>
                             <span>Continue with </span>
-                            <img className='h-5 w-5' src='https://www.svgrepo.com/show/475656/google-color.svg' loading='lazy' alt='google logo' />
+                            <img
+                                className='h-5 w-5'
+                                src='https://www.svgrepo.com/show/475656/google-color.svg'
+                                loading='lazy'
+                                alt='google logo'
+                            />
                         </Button>
 
                         <Button onClick={openPhoneLogin} type='button' variant='outline' className='flex w-full  gap-3 py-5'>
@@ -265,7 +270,10 @@ export default function LoginDialog() {
                     <div className='mt-4 flex flex-col gap-2'>
                         <p className='mt-1 text-base'>
                             Don't have an account?
-                            <button type='button' onClick={onToggle} className='mx-1 cursor-pointer text-base font-medium text-primary  hover:underline'>
+                            <button
+                                type='button'
+                                onClick={onToggle}
+                                className='mx-1 cursor-pointer text-base font-medium text-primary  hover:underline'>
                                 Sign up
                             </button>
                             here

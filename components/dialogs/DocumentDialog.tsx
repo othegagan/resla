@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 
 const PDFViewerComponent = dynamic(() => import('../custom/PDFViewer'), {
-    ssr: false,
+    ssr: false
 });
 
 import useDocumentDialog from '@/hooks/dialogHooks/useDocumentDialog';
@@ -50,7 +50,7 @@ export default function DocumentDialog() {
                     <div>
                         {documentModal.isAgreementAcceptedOn ? (
                             <label htmlFor='terms1' className='ml-6 mt-4 text-sm font-medium leading-none tracking-normal'>
-                                MyBundee's Rental Agreement accepted on <br className='md:hidden' /> {documentModal.isAgreementAcceptedOn}
+                                Resla's Rental Agreement accepted on <br className='md:hidden' /> {documentModal.isAgreementAcceptedOn}
                             </label>
                         ) : (
                             <RentalAgreementCheckBox />

@@ -137,7 +137,7 @@ export default function PhoneNumberSignInDialog() {
                         <div className='w-full'>
                             <div className='flex flex-col items-center gap-4'>
                                 <Logo className='scale-[1.3]' />
-                                <span className='mb-4 ml-4 text-xl font-semibold text-neutral-700'>Login with MyBundee account</span>
+                                <span className='mb-4 ml-4 text-xl font-semibold text-neutral-700'>Login with Resla account</span>
                             </div>
 
                             {!verificationId ? (
@@ -146,7 +146,11 @@ export default function PhoneNumberSignInDialog() {
                                         Phone Number:
                                     </Label>
                                     <PhoneNumber setPhone={setPhoneNumber} phone={phoneNumber} />
-                                    <Button type='button' className='ml-auto w-full' onClick={handleSendVerificationCode} disabled={!phoneNumber || loading}>
+                                    <Button
+                                        type='button'
+                                        className='ml-auto w-full'
+                                        onClick={handleSendVerificationCode}
+                                        disabled={!phoneNumber || loading}>
                                         {loading ? <LuLoader2 className='h-5 w-5 animate-spin text-white' /> : 'Send Verification Code'}
                                     </Button>
                                 </div>

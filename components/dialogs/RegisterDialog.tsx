@@ -34,12 +34,12 @@ const RegisterSchema = z
             .regex(passwordRegex, { message: 'Password must contain at least one number and one special character' }),
         confirmPassword: z.string({ message: 'Confirm Password is required' }),
         acceptTerms: z.boolean().refine((val) => val === true, {
-            message: 'You must accept the terms and privacy statements',
-        }),
+            message: 'You must accept the terms and privacy statements'
+        })
     })
     .refine((data) => data.password === data.confirmPassword, {
         message: 'Passwords must match',
-        path: ['confirmPassword'],
+        path: ['confirmPassword']
     });
 
 type FormFields = z.infer<typeof RegisterSchema>;
@@ -65,10 +65,10 @@ export default function RegisterDialog() {
         handleSubmit,
         setError,
         reset,
-        formState: { errors, isSubmitting },
+        formState: { errors, isSubmitting }
     } = useForm<FormFields>({
         resolver: zodResolver(RegisterSchema),
-        mode: 'onChange',
+        mode: 'onChange'
     });
 
     const onSubmit: SubmitHandler<FormFields> = async (data) => {
@@ -94,7 +94,7 @@ export default function RegisterDialog() {
                 firstname: firstName,
                 lastname: lastName,
                 email,
-                mobilephone: `+${phoneNumber}`,
+                mobilephone: `+${phoneNumber}`
             };
 
             // Create user in your database
@@ -133,7 +133,7 @@ export default function RegisterDialog() {
                 if (userResponse.success) {
                     const payload = {
                         userData: userResponse.data.userResponse,
-                        authToken: authTokenResponse.authToken,
+                        authToken: authTokenResponse.authToken
                     };
                     closeModal();
                     await createSession(payload);
@@ -146,7 +146,7 @@ export default function RegisterDialog() {
                     firstname: user.displayName,
                     lastname: '',
                     email: user.email,
-                    mobilephone: user.phoneNumber,
+                    mobilephone: user.phoneNumber
                 };
 
                 const createUserResponse = await createNewUser(newUserPayload);
@@ -179,7 +179,7 @@ export default function RegisterDialog() {
 
     return (
         <Dialog
-            title='Sign Up with MyBundee'
+            title='Sign Up with Resla'
             description=''
             isOpen={registerDialog.isOpen}
             openDialog={() => {
@@ -198,14 +198,14 @@ export default function RegisterDialog() {
                                     <Label htmlFor='firstName'>
                                         First Name <span>*</span>
                                     </Label>
-                                    <Input  type='text' id='firstName' {...register('firstName')} />
+                                    <Input type='text' id='firstName' {...register('firstName')} />
                                     <FormError message={errors.firstName?.message} />
                                 </div>
                                 <div className='space-y-2'>
                                     <Label htmlFor='lastName'>
                                         Last Name <span>*</span>
                                     </Label>
-                                    <Input  type='text' id='lastName' {...register('lastName')} />
+                                    <Input type='text' id='lastName' {...register('lastName')} />
                                     <FormError message={errors.lastName?.message} />
                                 </div>
                             </div>
@@ -214,7 +214,7 @@ export default function RegisterDialog() {
                                 <Label htmlFor='email'>
                                     Email <span>*</span>
                                 </Label>
-                                <Input  type='email' id='email' {...register('email')} />
+                                <Input type='email' id='email' {...register('email')} />
                                 <FormError message={errors.email?.message} />
                             </div>
 
@@ -233,9 +233,15 @@ export default function RegisterDialog() {
                                 <div className='relative'>
                                     <Input type={showPassword ? 'text' : 'password'} id='password' {...register('password')} />
                                     {showPassword ? (
-                                        <FaEyeSlash onClick={() => setShowPassword(!showPassword)} className='absolute right-2 top-2.5 cursor-pointer' />
+                                        <FaEyeSlash
+                                            onClick={() => setShowPassword(!showPassword)}
+                                            className='absolute right-2 top-2.5 cursor-pointer'
+                                        />
                                     ) : (
-                                        <FaEye onClick={() => setShowPassword(!showPassword)} className='absolute right-2 top-2.5 cursor-pointer' />
+                                        <FaEye
+                                            onClick={() => setShowPassword(!showPassword)}
+                                            className='absolute right-2 top-2.5 cursor-pointer'
+                                        />
                                     )}
                                 </div>
                                 <FormError message={errors.password?.message} />
@@ -246,7 +252,11 @@ export default function RegisterDialog() {
                                     Confirm Password <span>*</span>
                                 </Label>
                                 <div className='relative'>
-                                    <Input type={showConfirmPassword ? 'text' : 'password'} id='confirmPassword' {...register('confirmPassword')} />
+                                    <Input
+                                        type={showConfirmPassword ? 'text' : 'password'}
+                                        id='confirmPassword'
+                                        {...register('confirmPassword')}
+                                    />
                                     {showConfirmPassword ? (
                                         <FaEyeSlash
                                             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
@@ -266,12 +276,12 @@ export default function RegisterDialog() {
                                 <label className='flex items-center gap-3'>
                                     <input type='checkbox' id='terms' className='scale-[1.1] accent-black' {...register('acceptTerms')} />
                                     <p className='select-none text-xs'>
-                                        I agree to MyBundee&apos;s
-                                        <Link href='/terms' className='text-primary underline underline-offset-4'>
+                                        I agree to Resla&apos;s
+                                        <Link href='/terms' className='text-primary underline underline-offset-4 mx-1'>
                                             terms
                                         </Link>
                                         and
-                                        <Link href='/privacy' className='text-primary underline underline-offset-4'>
+                                        <Link href='/privacy' className='text-primary underline underline-offset-4 mx-1'>
                                             Privacy Statements
                                         </Link>
                                         .
@@ -281,12 +291,12 @@ export default function RegisterDialog() {
 
                                 <label className='flex items-center gap-3'>
                                     <input type='checkbox' id='terms' className='scale-[1.1] accent-black' checked />
-                                    <p className='select-none text-xs'>I agree to receive marketing SMS messages from MyBundee.</p>
+                                    <p className='select-none text-xs'>I agree to receive marketing SMS messages from Resla.</p>
                                 </label>
 
                                 <label className='flex items-center gap-3'>
                                     <input type='checkbox' id='terms' className='scale-[1.1] accent-black' checked />
-                                    <p className='select-none text-xs'>I agree to receive account update SMS messages from MyBundee.</p>
+                                    <p className='select-none text-xs'>I agree to receive account update SMS messages from Resla.</p>
                                 </label>
                             </div>
 
@@ -307,13 +317,21 @@ export default function RegisterDialog() {
                             variant='outline'
                             className='flex w-full gap-4  py-5'>
                             <span>Continue with </span>
-                            <img className='h-5 w-5' src='https://www.svgrepo.com/show/475656/google-color.svg' loading='lazy' alt='google logo' />
+                            <img
+                                className='h-5 w-5'
+                                src='https://www.svgrepo.com/show/475656/google-color.svg'
+                                loading='lazy'
+                                alt='google logo'
+                            />
                         </Button>
 
                         <div className='mt-4 flex flex-col gap-2'>
                             <p className='mt-1 '>
                                 Already have an account?
-                                <button type='button' onClick={onToggle} className='mx-1 cursor-pointer text-base font-medium text-primary  hover:underline'>
+                                <button
+                                    type='button'
+                                    onClick={onToggle}
+                                    className='mx-1 cursor-pointer text-base font-medium text-primary  hover:underline'>
                                     Log In
                                 </button>
                             </p>
@@ -324,9 +342,10 @@ export default function RegisterDialog() {
                 {showSuccessfulSignUp && (
                     <div className='flex flex-col items-center justify-center gap-4'>
                         <img src='/images/party.svg' alt='party_cone' className='h-40 w-96 object-contain' />
-                        <h3>Thanks for joining MyBundee.</h3>
+                        <h3>Thanks for joining Resla.</h3>
                         <p className='text-center'>
-                            A verification email has been sent successfully..! <br /> Please check your inbox and click on the verification link.
+                            A verification email has been sent successfully..! <br /> Please check your inbox and click on the verification
+                            link.
                         </p>
                         <Button
                             type='button'
