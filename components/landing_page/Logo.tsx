@@ -27,7 +27,7 @@ const Logo = ({ className }: LogoPros) => {
     ) : (
         <>
             <button type='button' onClick={handleLogoClick} className={`cursor-pointer ${className}`}>
-                <img src='/resla-logo.png' className='h-auto w-20 object-cover' alt='host_logo' />
+                <img src='/resla-logo.png' className='h-auto w-24 object-cover' alt='host_logo' />
             </button>
         </>
     );
