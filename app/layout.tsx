@@ -1,5 +1,4 @@
 import Footer from '@/components/Footer';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { Inter } from 'next/font/google';
@@ -34,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang='en' suppressHydrationWarning={true}>
             <head>
                 <title>MyBundee</title>
-                <link rel='icon' type='image/png' href='/bundee-logo.png' />
+                <link rel='icon' type='image/png' href='/favicon.png' />
                 <meta content='width=device-width, initial-scale=1' name='viewport' />
                 <meta name='description' content='' />
                 <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
@@ -64,7 +63,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         </HideInIFrame>
                     </div>
                 </Providers>
-                <SpeedInsights />
             </body>
         </html>
     );
