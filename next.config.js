@@ -48,40 +48,6 @@ const nextConfig = {
     },
     webpack: (config, { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }) => {
 
-        // Create a separate rule for @idscan/idvc2 CSS files
-        config.module.rules.push({
-            test: /node_modules\/@idscan\/idvc2\/.*\.css$/,
-            use: [
-                MiniCssExtractPlugin.loader,
-                {
-                    loader: 'css-loader',
-                    options: {
-                        modules: false,
-                    },
-                },
-            ],
-        });
-
-        // Add MiniCssExtractPlugin to plugins
-        config.plugins.push(
-            new MiniCssExtractPlugin({
-                filename: 'static/css/[name].css',
-                chunkFilename: 'static/css/[id].css',
-            })
-        );
-
-        // Add CopyWebpackPlugin for neural networks files
-        config.plugins.push(new CopyPlugin({
-            patterns: [
-                {
-                    from: 'node_modules/@idscan/idvc2/dist/networks/*',
-                    to: 'networks/[name][ext]',
-                    toType: 'template',
-                },
-            ],
-        }));
-
-
         config.externals.push({ canvas: 'commonjs canvas' });
         return config;
     },
