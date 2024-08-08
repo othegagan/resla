@@ -23,9 +23,9 @@ const DocumentModal = dynamic(() => import('@/components/dialogs/DocumentDialog'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 
 export const metadata: Metadata = {
-    title: 'MyBundee',
+    title: 'Resla | Demo',
     description:
-        'Step into the world of MyBundee, where you can discover a diverse range of vehicles tailored to your interests. Embark on a journey to explore and experience your dream destinations .'
+        'Resla, where you can discover a diverse range of vehicles tailored to your interests. Embark on a journey to explore and experience your dream destinations .'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
