@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang='en' suppressHydrationWarning={true}>
             <head>
-                <title>MyBundee</title>
+                <title>Resla | Demo</title>
                 <link rel='icon' type='image/png' href='/favicon.png' />
                 <meta content='width=device-width, initial-scale=1' name='viewport' />
                 <meta name='description' content='' />

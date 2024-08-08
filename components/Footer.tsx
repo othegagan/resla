@@ -12,7 +12,7 @@ const Footer = () => {
                 <Container className='p-4'>
                     <div className=' grid grid-cols-2 gap-4 p-4 md:grid-cols-3 lg:grid-cols-5'>
                         <div>
-                            <p className='font-semibold text-gray-800 '>MyBundee</p>
+                            <p className='font-semibold text-gray-800 '>Resla</p>
                             <div className='mt-2 flex flex-col items-start space-y-2 font-light  md:font-normal'>
                                 <p>
                                     <Link href='/privacy'>Privacy Policy</Link>
@@ -93,7 +93,7 @@ const Footer = () => {
                     <div className='hidden flex-col items-center justify-between sm:flex-row md:flex'>
                         <Logo />
                         <p className='mt-4 text-sm text-gray-500 sm:mt-0 '>
-                            © Copyright {new Date().getFullYear()}. MyBundee All Rights Reserved.
+                            © Copyright {new Date().getFullYear()}. All Rights Reserved.
                         </p>
                     </div>
 
@@ -105,7 +105,7 @@ const Footer = () => {
                         </Link>
                     </div>
                     <p className='mt-4 text-center text-sm text-gray-500 sm:mt-0 md:hidden '>
-                        © Copyright {new Date().getFullYear()}. MyBundee All Rights Reserved.
+                        © Copyright {new Date().getFullYear()}. All Rights Reserved.
                     </p>
                 </Container>
             </footer>
@@ -148,7 +148,7 @@ const Footer = () => {
                         <Link className='text-sm text-zinc-800 no-underline' href='mailto: support@mybundee.com'>
                             support@mybundee.com
                         </Link>
-                        <p className='text-sm text-zinc-800'> © Copyright {new Date().getFullYear()}. MyBundee All Rights Reserved.</p>
+                        <p className='text-sm text-zinc-800'> © Copyright {new Date().getFullYear()}.  All Rights Reserved.</p>
                     </div>
                 </div>
             </footer>
