@@ -13,9 +13,14 @@ export default function InsuranceDialog() {
     }
 
     return (
-        <Dialog isOpen={insuranceDialog.isOpen} closeDialog={closeModal} openDialog={openModal} className='lg:max-w-lg' title='Trip Review'>
+        <Dialog
+            isOpen={insuranceDialog.isOpen}
+            closeDialog={closeModal}
+            openDialog={openModal}
+            className='lg:max-w-4xl'
+            title='Insurance Coverage'>
             <DialogBody>
-                <main className='flex flex-col  p-2 md:p-6 md:pb-0 '>
+                <main className='flex flex-col '>
                     <img src='/images/insurance_coverage.png' alt='Insurance' className='w-full h-auto' />
                 </main>
             </DialogBody>
