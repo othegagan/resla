@@ -17,6 +17,7 @@ import Navbar from '@/components/navigation/Navbar';
 import { Toaster } from '@/components/ui/toaster';
 import Providers from '@/lib/providers';
 import CarFilters from './vehicles/CarFilters';
+import InsuranceDialog from '@/components/dialogs/InsuranceDialog';
 
 const DocumentModal = dynamic(() => import('@/components/dialogs/DocumentDialog'), { ssr: false });
 
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         <DocumentModal />
                         <ForgotPasswordDialg />
                         <DrivingLicenceDialog />
+                        <InsuranceDialog />
                     </ClientOnly>
                     <HideComponentInFrame>
                         <Navbar />

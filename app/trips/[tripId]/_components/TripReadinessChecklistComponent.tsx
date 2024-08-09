@@ -5,10 +5,12 @@ import { IoCheckmarkCircleOutline } from 'react-icons/io5';
 import { RxQuestionMarkCircled } from 'react-icons/rx';
 import DocumentHandlerComponent from './DocumentHandlerComponent';
 import useDrivingLicenceDialog from '@/hooks/dialogHooks/useDrivingLicenceDialog';
+import useInsuranceDialog from '@/hooks/dialogHooks/useInsuranceDialog';
 
 export default function TripReadinessChecklistComponent({ trip }: any) {
     const phoneNumberDialog = usePhoneNumberVerificationDialog();
     const drivingLicenseDialog = useDrivingLicenceDialog();
+    const insuranceDialog = useInsuranceDialog();
 
     const drivingLicenseFlag = trip.isLicenseVerified;
     const isPhoneVerifiedFlag = trip.isPhoneVarified;
@@ -116,7 +118,12 @@ export default function TripReadinessChecklistComponent({ trip }: any) {
                     <RxQuestionMarkCircled className='text-yellow-500 size-5' />
                     Insurance
                 </div>
-                <button type='button' className='text-md underline underline-offset-2'>
+                <button
+                    type='button'
+                    className='text-md underline underline-offset-2'
+                    onClick={() => {
+                        insuranceDialog.onOpen();
+                    }}>
                     Coming Soon
                 </button>
             </div>
