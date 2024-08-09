@@ -117,7 +117,7 @@ export default function TripReadinessChecklistComponent({ trip }: any) {
                     Insurance
                 </div>
                 <button type='button' className='text-md underline underline-offset-2'>
-                    Update
+                    Coming Soon
                 </button>
             </div>
         </div>
